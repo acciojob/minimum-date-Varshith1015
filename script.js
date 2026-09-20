@@ -1,10 +1,19 @@
 function minDate(dates) {
   //write you code here
-	var mindate =dates[0];
-	for(let i=0;i<dates.size();i++){
-		mindate=Math.min(mindate,dates[i]);
+	let min =dates[0];
+	for(let i=1;i<dates.length;i++){
+		let [y1, m1, d1] = min.split("/").map(Number);
+        let [y2, m2, d2] = dates[i].split("/").map(Number);
+
+        if (
+            y2 < y1 ||
+            (y2 === y1 && m2 < m1) ||
+            (y2 === y1 && m2 === m1 && d2 < d1)
+        ) {
+            min = dates[i];
+        }
 	}
-	return mindate;	
+	return min;	
 }
 
 minDate(dates);
