@@ -4,7 +4,7 @@ function minDate(dates) {
 	for(let i=0;i<dates.size();i++){
 		mindate=Math.min(mindate,dates[i]);
 	}
-	alert(mindate);	
+	return mindate;	
 }
 
 minDate(dates);
